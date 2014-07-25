@@ -1,0 +1,8 @@
+[03-Sep-2009 09:10:10] PHP Fatal error:  Out of memory (allocated 6029312) (tried to allocate 19456 bytes) in /home/kursosli/public_html/cursos/course/lib.php on line 281
+[03-Sep-2009 10:10:34] PHP Fatal error:  Out of memory (allocated 6815744) (tried to allocate 19456 bytes) in /home/kursosli/public_html/cursos/lib/deprecatedlib.php on line 194
+[13-Aug-2010 11:13:13] PHP Fatal error:  Out of memory (allocated 1048576) (tried to allocate 19456 bytes) in /home/inppcurs/public_html/cursos/lib/adodb/adodb-time.inc.php on line 456
+[13-Aug-2010 11:13:49] PHP Fatal error:  Out of memory (allocated 7340032) (tried to allocate 77824 bytes) in /home/inppcurs/public_html/cursos/lib/moodlelib.php on line 1985
+[13-Aug-2010 11:14:08] PHP Fatal error:  Out of memory (allocated 6029312) (tried to allocate 19456 bytes) in /home/inppcurs/public_html/cursos/course/lib.php on line 281
+[13-Aug-2010 11:14:16] PHP Fatal error:  Out of memory (allocated 3407872) (tried to allocate 77824 bytes) in /home/inppcurs/public_html/cursos/lib/weblib.php on line 4561
+[13-Aug-2010 11:14:34] PHP Fatal error:  Out of memory (allocated 4194304) (tried to allocate 4864 bytes) in /home/inppcurs/public_html/cursos/lib/dmllib.php on line 1976
+[13-Aug-2010 11:18:46] PHP Fatal error:  Out of memory (allocated 8126464) (tried to allocate 19456 bytes) in /home/inppcurs/public_html/cursos/lib/moodlelib.php on line 6557

@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA University Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+
+body {
+  -webkit-text-size-adjust: 100%; /*Fix Mobile Safari Font Scale*/
+}
+
+/* RESPONSIVE FONT SIZES
+--------------------------------------------------------- */
+
+/* MAIN LAYOUT DIVS
+--------------------------------------------------------- */
+body.bd #ja-wrapper {
+  min-width: 720px !important;
+}
+
+.main {
+  width: 720px !important;
+}
+
+#ja-mainbody {
+	width: 100% !important;
+}
+
+/* HEADER
+--------------------------------------------------------- */
+#ja-header {
+	
+}
+
+/* FOOTER
+--------------------------------------------------------- */
+#ja-footer {
+}
+
+/* COLUMN 
+--------------------------------------------------------- */
+#ja-right {
+	width: 100% !important;
+}
+
+/* MODULES
+--------------------------------------------------------- */
+/* Department list */
+ul.department-list {
+  text-align: center;
+}
+
+ul.department-list li {
+  display: inline-block;
+  float: none;
+}
+
+/* MAIN NAVIGATION 
+--------------------------------------------------------- */
+/* Main Nav ---*/
+
+/* Slideshow */
+
+/* Top spotlight */
+
+/* Top spotlight1 */
+
+/* Top spotlight2 */
+#ja-topsl2 .ja-box {
+	width: 50% !important; 
+}
+
+#ja-topsl2 .ja-box-right {
+	position: static;
+}
+
+#ja-topsl2 .moduletable {
+	margin-bottom: 20px;
+}
+
+/* Bot spotlight1 */
+#ja-botsl1 .ja-box {
+	width: 50% !important;
+}
+
+#ja-botsl1 .ja-box-right {
+	position: static;
+	width: 100% !important;
+	text-align: center;
+	min-height: 0 !important;
+}
+
+#ja-botsl1 .moduletable {
+	margin-bottom: 20px;
+}
+
+#ja-botsl1 .ja-box-right .moduletable {
+	margin-bottom: 0;
+}
+
+ul.social-list li {
+	float: none;
+	display: inline-block;
+}
+
+/* Bottom spotlight2 */
+#ja-botsl2 .ja-box {
+	width: 50% !important; 
+}
+
+#ja-botsl2 .ja-box-right {
+	position: static;
+}
+
+#ja-botsl2 .moduletable {
+	margin-bottom: 20px;
+}
+
+/* Contentslider */
+.ja-contentslider-center div.jsslide {
+}
+
+ /* MISC
+--------------------------------------------------------- */

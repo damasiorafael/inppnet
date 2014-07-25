@@ -1,0 +1,51 @@
+<h2   class="main">data module needs upgrading</h2><hr />
+(mysql): UPDATE mdl_data SET notification=0 WHERE notification IS NULL &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): ALTER TABLE mdl_data MODIFY COLUMN notification BIGINT(10) unsigned NOT NULL DEFAULT 0 after editany &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): ALTER TABLE mdl_data MODIFY COLUMN notification BIGINT(10) unsigned NOT NULL DEFAULT 0 after editany &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<div class="notifysuccess" style="text-align:center">data tabelas foram configuradas corretamente</div>
+<hr /><h2   class="main">resource module needs upgrading</h2><hr />
+(mysql): UPDATE mdl_resource SET options = 'objectframe' WHERE (UPPER(reference) LIKE '%.PDF'
+        OR UPPER(reference) LIKE '%.FDF'
+        OR UPPER(reference) LIKE '%.XDP'
+        OR UPPER(reference) LIKE '%.XFD'
+        OR UPPER(reference) LIKE '%.XFDF')
+        AND type='file' AND  (popup = '') 
+        AND ( (options = '')  OR options = 'frame') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): DELETE FROM mdl_config WHERE name = 'resource_allowlocalfiles' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">resource tabelas foram configuradas corretamente</div>
+<hr /><h2   class="main">scorm module needs upgrading</h2><hr />
+(mysql): SELECT * FROM mdl_scorm &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT id FROM mdl_config_plugins WHERE name = 'grademethodfixed' AND plugin = 'scorm' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_config_plugins WHERE id = '-1' &nbsp; 
+<hr />
+<hr />
+(mysql): INSERT INTO mdl_config_plugins ( PLUGIN, NAME, VALUE ) VALUES ( 'scorm', 'grademethodfixed', '1' ) &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT LAST_INSERT_ID() &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">scorm tabelas foram configuradas corretamente</div>
+<hr /><h2   class="main">workshop module needs upgrading</h2><hr />
+(mysql): SELECT wa.id
+                                      FROM mdl_workshop_assessments wa
+                                 LEFT JOIN mdl_workshop_submissions ws ON wa.submissionid = ws.id
+                                     WHERE ws.id IS NULL &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">workshop tabelas foram configuradas corretamente</div>
+<hr />

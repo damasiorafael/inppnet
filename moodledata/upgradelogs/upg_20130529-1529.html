@@ -1,0 +1,317 @@
+<div class="notifysuccess" style="text-align:center">Language import utility: pt_br_utf8 ... </div>
+<h2   class="main">Upgrading Moodle database from version 1.9.4+ (Build: 20090506) (2007101546.06) to 1.9.19 (Build: 20120706) (2007101592)...</h2><div class="notifysuccess" style="text-align:center">Fixing mnet records, this may take a while...</div>
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101547' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_log_display WHERE action = 'update' AND module = 'tag' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_log_display WHERE id = '-1' &nbsp; 
+<hr />
+<hr />
+(mysql): INSERT INTO mdl_log_display ( MODULE, ACTION, MTABLE, FIELD ) VALUES ( 'tag', 'update', 'tag', 'name' ) &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT LAST_INSERT_ID() &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101551' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_config WHERE name = 'passwordpolicy' AND value = '0' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): DELETE FROM mdl_config WHERE name = 'passwordpolicy' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center"><p>O Moodle 1.9.7 contém várias atualizações de segurança relativas às senhas dos usuários e ao backup para proteger os dados dos usuário no seu site. Como resultado algumas das suas configurações e permissões relativas ao backup podem ter sido alteradas.<br />Veja as <a href="http://docs.moodle.org/en/Moodle_1.9.7_release_notes" target="_blank">notas de lançamento do Moodle 1.9.7</a> para mais detalhes.</p>
+Para reduzir o risco de roubo de senhas, é fortemente recomendado definir um "sal" para a senha.<br />Veja a <a href="http://docs.moodle.org/pt_br/report/security/report_security_check_passwordsaltmain" target="_blank">documentação sobre sal nas senhas</a> para mais detalhes.</div>
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101561.01' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT DISTINCT u.id, u.firstname, u.lastname, u.picture, u.imagealt, u.email, u.password, u.mailformat
+              FROM mdl_role_capabilities rc
+              JOIN mdl_role_assignments ra ON (ra.contextid = rc.contextid AND ra.roleid = rc.roleid)
+              JOIN mdl_user u ON u.id = ra.userid
+             WHERE rc.capability = 'moodle/site:doanything'
+                   AND rc.permission = 1
+                   AND u.deleted = 0
+                   AND rc.contextid = 1 AND (u.auth='manual' OR u.auth='email') &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_user_preferences WHERE userid = '2' AND name = 'auth_forcepasswordchange' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user_preferences SET value = '1' WHERE id = '47' &nbsp; 
+<hr />
+ERROR: SMTP Error: Could not connect to SMTP host.
+<hr />
+(mysql): INSERT INTO mdl_log (time, userid, course, ip, module, cmid, action, url, info)
+        VALUES ('1369852189', '2', '1', '189.115.4.102', 'library', '0', 'mailer', 'http://inppnet.com.br/cursos/admin/index.php?confirmupgrade=1&amp;confirmrelease=1&amp;confirmplugincheck=1', 'ERROR: SMTP Error: Could not connect to SMTP host.') &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101561.02' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT DISTINCT u.id, u.firstname, u.lastname, u.picture, u.imagealt, u.email, u.password
+                  FROM mdl_role_capabilities rc
+                  JOIN mdl_role_assignments ra ON (ra.contextid = rc.contextid AND ra.roleid = rc.roleid)
+                  JOIN mdl_user u ON u.id = ra.userid
+                 WHERE rc.capability = 'moodle/site:doanything'
+                       AND rc.permission = 1
+                       AND u.deleted = 0
+                       AND rc.contextid = 1 AND u.auth&lt;&gt;'manual' AND u.auth&lt;&gt;'email' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101563.02' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/cas' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='cas' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/db' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/email' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/fc' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='fc' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/imap' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='imap' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/ldap' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/manual' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/mnet' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='mnet' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/nntp' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='nntp' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/none' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/pam' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='pam' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/pop3' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='pop3' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/radius' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='radius' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name,value FROM mdl_config_plugins WHERE plugin = 'auth/shibboleth' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_user SET password='not cached' WHERE auth='shibboleth' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101563.03' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT id, category, sortorder from mdl_course
+                ORDER BY sortorder ASC; &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '1000' WHERE id = '1' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2001' WHERE id = '5' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2002' WHERE id = '3' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2003' WHERE id = '4' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2004' WHERE id = '6' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2005' WHERE id = '9' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2006' WHERE id = '8' &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_course SET sortorder = '2007' WHERE id = '7' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101571.01' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_mnet_host WHERE wwwroot = 'http://inppnet.com.br/cursos' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_mnet_host WHERE  (wwwroot = '')  LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT id FROM mdl_mnet_application WHERE name = 'moodle' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT id, id AS id2 FROM mdl_mnet_host &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT id
+            FROM mdl_user u1
+            WHERE u1.mnethostid NOT IN (2, 3)
+              AND NOT EXISTS (
+                  SELECT 'x'
+                    FROM mdl_user u2
+                   WHERE u2.username = u1.username
+                     AND u2.mnethostid = 3) &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_mnet_host SET applicationid = '1' WHERE id = 3 or id = 2 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101571.02' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): ALTER TABLE mdl_mnet_host MODIFY COLUMN portno MEDIUMINT(5) unsigned NOT NULL DEFAULT 0 &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101571.03' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'filter_tex_latexpreamble' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '\\usepackage[latin1]{inputenc}
+\\usepackage{amsmath}
+\\usepackage{amsfonts}
+\\RequirePackage{amsmath,amssymb,latexsym}
+' WHERE name = 'filter_tex_latexpreamble' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101571.04' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): DELETE FROM mdl_config WHERE name = 'regenloginsession' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101571.05' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'filter_mediaplugin_enable_ogv' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT * FROM mdl_config WHERE id = '-1' &nbsp; 
+<hr />
+<hr />
+(mysql): INSERT INTO mdl_config ( NAME, VALUE ) VALUES ( 'filter_mediaplugin_enable_ogv', '1' ) &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT LAST_INSERT_ID() &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'filter_mediaplugin_enable_ogg' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): INSERT INTO mdl_config ( NAME, VALUE ) VALUES ( 'filter_mediaplugin_enable_ogg', '1' ) &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT LAST_INSERT_ID() &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101590.01' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW INDEX FROM mdl_user_info_data &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE INDEX mdl_userinfodata_usefie_ix ON mdl_user_info_data (userid, fieldid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Sucesso</div>
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101591.01' WHERE name = 'version' &nbsp; 
+<hr />
+<hr />
+(mysql): SELECT name FROM mdl_config WHERE name = 'version' LIMIT 1 &nbsp; 
+<hr />
+<hr />
+(mysql): UPDATE mdl_config SET value = '2007101591.05' WHERE name = 'version' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Database was successfully upgraded</div>
